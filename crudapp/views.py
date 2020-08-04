@@ -23,17 +23,17 @@ def show(request):
     return render(request,"show.html",{'employees':employees})
 
 def edit(request, id):
-    Employee=employee.objects.get(id=id)
-    return render(request,"edit.html",{'Employee':Employee})
+    employees=employee.objects.get(id=id)
+    return render(request,"edit.html",{'employees':employees})
 
 def update(request, id):
-    Employee=employee.objects.get(id=id)
-    form=EmployeeForm(request.POST, instance=Employee)
+    employees=employee.objects.get(id=id)
+    form=EmployeeForm(request.POST, instance=employees)
     if form.is_valid():
         form.save()
         return redirect('/show')
-    return render(request,"edit.html",{'Employee':Employee})
+    return render(request,"edit.html",{'employees':employees})
 def delete(request, id):
-    Employee=EmployeeForm.objects.get(id=id)
-    Employee.delete()
+    employees=EmployeeForm.objects.get(id=id)
+    employees.delete()
     return redirect('/show')

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static '/style.css'%}"/>
 </head>
 <body>
-<form method="POST" class="post-form" action="/update/{{Employee.id}}">
+<form method="POST" class="post-form" action="/update/{{employees.id}}">
     {% csrf_token %}
     <div class="container">
         <div class="form-group row">
@@ -20,25 +20,25 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form label">employee Id:</label>
             <div class="col-sm-4">
-                <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ Employee.eid}}"/>
+                <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ employees.eid}}"/>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form label">employee Name:</label>
             <div class="col-sm-4">
-                <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{ Employee.ename}}"/>
+                <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{ employees.ename}}"/>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form label">employee Email:</label>
             <div class="col-sm-4">
-                <input type="email" name="email" id="id_email" required maxlength="250" value="{{ Employee.eemail}}"/>
+                <input type="email" name="email" id="id_email" required maxlength="250" value="{{ employees.eemail}}"/>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form label">employee Contact:</label>
             <div class="col-sm-4">
-                <input type="text" name="econtact" id="id_econtact" required maxlength="20" value="{{ Employee.econtact}}"/>
+                <input type="text" name="econtact" id="id_econtact" required maxlength="20" value="{{ employees.econstact}}"/>
             </div>
         </div>
         <div class="form-group row">
